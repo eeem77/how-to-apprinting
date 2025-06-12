@@ -2,6 +2,7 @@
     --primary: oklch(37.3% 0.034 259.733);
     --secondary: #16213e;
     --thirdary: #99A1AF;
+    --quinary: #D1D5DC;
     --quaternary: #E5E7EB;
     --accent: #1DBFE1;
     --accent-light: #7BC142;
@@ -356,6 +357,7 @@ canvas {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--primary);
+    opacity: 0;
 }
 
 .step-card::before {
@@ -386,7 +388,7 @@ canvas {
 
 .step-card:hover {
     transform: translateY(-15px);
-    background: var(--thirdary)
+    background: var(--quinary)
 }
 
 .step-card:hover .step-number {
@@ -419,6 +421,7 @@ canvas {
     text-align: center;
     transition: var(--transition);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
 }
 
 .benefit-icon {

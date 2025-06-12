@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: section,
         start: "top bottom-=100",
-        toggleActions: "play none none none",
+        /*toggleActions: "play none none none",*/
       },
       opacity: 0,
       y: 50,
@@ -19,22 +19,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Animación para tarjetas de pasos
-  gsap.from(".step-card", {
-    opacity: 0,
-    y: 50,
-    stagger: 0.3,
-    duration: 1.3,
+  gsap.to(".step-card", {
     scrollTrigger: {
       scrub: true,
       trigger: ".step-card",
+      end: "botton top",
       start: "top bottom",
-      end: "bottom top",
       /*toggleActions: "play none none none",*/
     },
+    opacity: 1,
+    y: -50,
+    stagger: 0.9,
+    ease: "power.in",
+    duration: 1.3,
   });
-
   // Animación para tarjetas de beneficios
-  gsap.from(".benefit-card", {
+  gsap.to(".benefit-card", {
     scrollTrigger: {
       scrub: true,
       trigger: ".benefits-section",
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       /*toggleActions: "play none none none",*/
     },
-    opacity: 0,
+    opacity: 1,
     y: 50,
     stagger: 0.3,
     duration: 1.3,
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Texto de margen de corte
       interactiveCtx.fillStyle = "#e94560";
       interactiveCtx.font = "14px Arial";
-      interactiveCtx.fillText("Margen de Corte", 10, 15);
+      interactiveCtx.fillText("Cutting Margin", 55, 15);
     }
 
     // Área segura (tamaño final del documento)
@@ -160,10 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
     interactiveCtx.strokeRect(safeX, safeY, safeWidth, safeHeight);
     interactiveCtx.setLineDash([]);
 
-    // Texto de área segura
+    // Secure Area
     interactiveCtx.fillStyle = "#0f3460";
     interactiveCtx.font = "bold 16px Arial";
-    interactiveCtx.fillText("Área Segura", safeX + 20, safeY + 30);
+    interactiveCtx.fillText("Secure Area", safeX + 30, safeY + 30);
 
     // Elemento de diseño de ejemplo (invitación)
     interactiveCtx.fillStyle = "#1a1a2e";
@@ -178,14 +178,14 @@ document.addEventListener("DOMContentLoaded", () => {
     interactiveCtx.font = "italic 28px Georgia";
     interactiveCtx.textAlign = "center";
     interactiveCtx.fillText(
-      "Invitación de Boda",
+      "Wedding Invitation",
       canvasWidth / 2,
       canvasHeight / 2 - 20
     );
 
     interactiveCtx.font = "18px Georgia";
     interactiveCtx.fillText(
-      "Sábado, 15 de Junio 2024",
+      "Saturday, June 15, 2024",
       canvasWidth / 2,
       canvasHeight / 2 + 20
     );
