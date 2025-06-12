@@ -1,0 +1,517 @@
+:root {
+    --primary: oklch(37.3% 0.034 259.733);
+    --secondary: #16213e;
+    --thirdary: #99A1AF;
+    --quaternary: #E5E7EB;
+    --accent: #1DBFE1;
+    --accent-light: #7BC142;
+    --highlight: #1DBFE1;
+    --light: #f8f9fa;
+    --dark: #0d0d1a;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--light);
+    background-color: var(--light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Estilos para la navegación */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background: rgba(10, 10, 20, 0.9);*/
+    background: linear-gradient(135deg, var(--thirdary) 0%, var(--light) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--highlight);
+    transition: var(--transition);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Estilos para las secciones */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Sección de introducción */
+.intro-section {
+    background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
+    text-align: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.intro-title {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+}
+
+.glitch-effect {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-effect::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--accent), 1px 0 var(--light);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-effect::after {
+    left: -2px;
+    text-shadow: -1px 0 var(--accent), 1px 0 var(--light);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+    }
+
+    20% {
+        clip: rect(12px, 9999px, 59px, 0);
+    }
+
+    40% {
+        clip: rect(48px, 9999px, 29px, 0);
+    }
+
+    60% {
+        clip: rect(42px, 9999px, 73px, 0);
+    }
+
+    80% {
+        clip: rect(63px, 9999px, 27px, 0);
+    }
+
+    100% {
+        clip: rect(34px, 9999px, 55px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+
+    20% {
+        clip: rect(79px, 9999px, 85px, 0);
+    }
+
+    40% {
+        clip: rect(66px, 9999px, 103px, 0);
+    }
+
+    60% {
+        clip: rect(98px, 9999px, 114px, 0);
+    }
+
+    80% {
+        clip: rect(114px, 9999px, 129px, 0);
+    }
+
+    100% {
+        clip: rect(115px, 9999px, 76px, 0);
+    }
+}
+
+.intro-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    opacity: 0.8;
+}
+
+.problem-box {
+    background: var(--quaternary);
+    border: rgba(229, 231, 235, 0.5);
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+.problem-title {
+    color: var(--highlight);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Sección de margen de corte */
+.bleed-section {
+    background: linear-gradient(45deg, oklch(96.7% 0.003 264.542) 0%, oklch(96.7% 0.003 264.542) 100%);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    color: var(--dark);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: var(--highlight);
+    border-radius: 2px;
+}
+
+.bleed-content {
+    color: var(--dark);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+
+.bleed-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bleed-visual {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.canvas-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+}
+
+canvas {
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección de canvas */
+.canvas-section {
+    background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
+}
+
+.canvas-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas-interactive {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.canvas-controls {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.control-btn {
+    padding: 12px 25px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-btn:hover {
+    background: var(--highlight);
+    transform: translateY(-3px);
+}
+
+/* Sección de pasos */
+.steps-section {
+    background: linear-gradient(45deg, oklch(96.7% 0.003 264.542) 0%, oklch(96.7% 0.003 264.542) 100%);
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.step-card {
+    width: 280px;
+    background: var(--quaternary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--quaternary) 0%, transparent 70%);
+    transform: rotate(30deg);
+    z-index: -1;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-15px);
+    background: var(--thirdary)
+}
+
+.step-card:hover .step-number {
+    background: var(--accent-light);
+    transform: scale(1.1);
+}
+
+.step-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Sección de beneficios */
+.benefits-section {
+    background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
+    color: var(--primary);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background: var(--quaternary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--highlight);
+}
+
+.benefit-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Sección CTA */
+.cta-section {
+    background: linear-gradient(45deg, oklch(96.7% 0.003 264.542) 0%, oklch(96.7% 0.003 264.542) 100%);
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--primary);
+}
+
+.cta-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    padding: 16px 45px;
+    background: var(--highlight);
+    color: var(--light);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    width: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
+}
+
+footer {
+    padding: 30px 5%;
+    text-align: center;
+    background: rgba(10, 10, 20, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-title {
+        font-size: 3rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .bleed-content,
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

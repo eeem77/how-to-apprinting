@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleed Margin Mastery | Canvas-Powered Print Precision</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">HOW TO</div>
+        <nav>
+            <ul>
+                <li><a href="#bleed">Bleed Margin</a></li>
+                <li><a href="#canvas">Canvas</a></li>
+                <li><a href="#steps">Steps</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de introducción -->
+    <section class="intro-section">
+        <div class="section-content">
+            <h1 class="intro-title">
+                <span class="glitch-effect" data-text="Print Precision">Print Precision</span>
+            </h1>
+            <p class="intro-subtitle">Master the art of bleed margins for perfect print results with the power of Canvas</p>
+            
+            <div class="problem-box">
+                <h3 class="problem-title">The White Borders Problem</h3>
+                <p>When a design is printed without bleed margin, minor shifts during the cutting process can leave unwanted white edges on your final product. This ruins the professional aesthetics of your printed materials.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de margen de corte -->
+    <section class="bleed-section" id="bleed">
+        <div class="section-content">
+            <h2 class="section-title">What is the Bleed Margin?</h2>
+            <div class="bleed-content">
+                <div class="bleed-text">
+                    <p>The bleed margin is the area extending beyond the edge of your design. This extra space (typically 0.25 inches) is trimmed during production to ensure your design reaches the paper's edge without white gaps.</p>
+                    <br>
+                    <p>Minor shifts during cutting can leave unsightly white edges on printed materials, ruining your design's professional appearance.</p>
+                    <br>
+                    <p>You can visualize and configure these margins with pixel-perfect precision, guaranteeing your designs always print flawlessly.</p>
+                </div>
+                <div class="bleed-visual">
+                    <div class="canvas-container">
+                        <canvas id="bleedCanvas" width="500" height="350"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Canvas -->
+    <section class="canvas-section" id="canvas">
+        <div class="section-content">
+            <h2 class="section-title">The Precision Magic of Canvas</h2>
+            <div class="canvas-content">
+                <p>Canvas enables you to visualize and configure bleed margins with absolute precision. Our interactive tool shows exactly how your design will appear after the cutting process.</p>
+                
+                <div class="canvas-interactive">
+                    <canvas id="interactiveCanvas" width="800" height="450"></canvas>
+                </div>
+                
+                <div class="canvas-controls">
+                    <button class="control-btn" id="addBleed">
+                        <span>+ Bleed</span>
+                    </button>
+                    <button class="control-btn" id="removeBleed">
+                        <span>- Bleed</span>
+                    </button>
+                    <button class="control-btn" id="resetCanvas">
+                        <span>Restart</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de pasos -->
+    <section class="steps-section" id="steps">
+        <div class="section-content">
+            <h2 class="section-title">Guía Paso a Paso</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Configura tu documento</h3>
+                    <p>Establece el tamaño final de tu diseño y añade 0.25 pulgadas adicionales en cada lado para el margen de corte.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Extiende tus elementos</h3>
+                    <p>Asegúrate de que los elementos de fondo y las imágenes se extiendan hasta el borde del área de sangrado.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Mantén contenido seguro</h3>
+                    <p>Coloca todo el contenido importante al menos 0.125 pulgadas dentro del borde de corte para evitar que sea cortado.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Exporta con marcas</h3>
+                    <p>Al exportar tu diseño, incluye marcas de corte y sangrado para guiar al impresor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de beneficios -->
+    <section class="benefits-section">
+        <div class="section-content">
+            <h2 class="section-title">Beneficios de un Diseño Bien Preparado</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3 class="benefit-title">Resultados profesionales</h3>
+                    <p>Impresiones perfectas sin bordes blancos inesperados ni elementos cortados.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Ahorro de costos</h3>
+                    <p>Evita reimpresiones costosas debido a errores en los márgenes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3 class="benefit-title">Entrega rápida</h3>
+                    <p>Procesos de impresión más eficientes sin necesidad de revisiones.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">😊</div>
+                    <h3 class="benefit-title">Satisfacción garantizada</h3>
+                    <p>Clientes felices con productos de alta calidad que cumplen con sus expectativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA -->
+    <section class="cta-section" id="contact">
+        <div class="section-content">
+            <h2 class="cta-title">¿Listo para crear diseños perfectos?</h2>
+            <p class="cta-subtitle">Nuestro equipo de expertos está listo para ayudarte a crear materiales impresos impecables que impresionen a tus clientes.</p>
+            <button class="cta-button">Contactar a Nuestros Expertos</button>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 PrecisionPrint. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
