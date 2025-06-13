@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Canvas para explicar el margen de corte
   const bleedCanvas = document.getElementById("bleedCanvas");
+  bleedCanvas.width = window.innerWidth / 3; // Ancho del canvas
+  bleedCanvas.height = bleedCanvas.height; // Alto del canvas
   const bleedCtx = bleedCanvas.getContext("2d");
   const bleedWidth = bleedCanvas.width;
   const bleedHeight = bleedCanvas.height;
@@ -106,15 +108,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Textos
     bleedCtx.fillStyle = "#333";
     bleedCtx.font = "bold 16px Arial";
-    bleedCtx.fillText("Safe Design Area", bleed + 20, bleed + 30);
+    bleedCtx.fillText("Safe Design Area", bleedWidth / 2.9, bleed + 30);
 
     bleedCtx.fillStyle = "#e94560";
     bleedCtx.font = "bold 14px Arial";
-    bleedCtx.fillText('Cutting Margin (0.25")', 50, 20);
+    bleedCtx.fillText('Cutting Margin (0.25")', bleedWidth / 3, 20);
   }
 
   // Canvas interactivo
   const interactiveCanvas = document.getElementById("interactiveCanvas");
+  if (window.innerWidth < 450) {
+    interactiveCanvas.width = window.innerWidth - 40; // Ancho del canvas
+  }
   const interactiveCtx = interactiveCanvas.getContext("2d");
   const canvasWidth = interactiveCanvas.width;
   const canvasHeight = interactiveCanvas.height;
@@ -122,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let bleedValue = 30; // 0.25" en píxeles (96 DPI)
   let showBleed = true;
 
+  drawInteractiveCanvas();
+  
   function drawInteractiveCanvas() {
     // Limpiar canvas
     interactiveCtx.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -142,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Texto de margen de corte
       interactiveCtx.fillStyle = "#e94560";
       interactiveCtx.font = "bold 14px Arial";
-      interactiveCtx.fillText("Cutting Margin", 100, 19);
+      interactiveCtx.fillText("Cutting Margin", canvasWidth / 2, 19);
     }
 
     // Área segura (tamaño final del documento)
@@ -163,17 +170,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // Secure Area
     interactiveCtx.fillStyle = "#0f3460";
     interactiveCtx.font = "bold 16px Arial";
-    interactiveCtx.fillText("Secure Area", safeX + 100, safeY + 30);
+    //interactiveCtx.fillText("Secure Area", safeX + 100, safeY + 30);
+    interactiveCtx.fillText("Secure Area", canvasWidth / 2, safeY + 30);
 
     // Elemento de diseño de ejemplo (invitación)
     interactiveCtx.fillStyle = "#1a1a2e";
-    interactiveCtx.fillRect(
-      safeX + 50,
-      safeY + 100,
-      safeWidth - 100,
-      safeHeight - 200
-    );
-
+    if (window.innerWidth < 450) {
+      interactiveCtx.fillRect(
+        safeX + 15,
+        safeY + 100,
+        safeWidth - 30,
+        safeHeight - 200
+      );
+    } else {
+      interactiveCtx.fillRect(
+        safeX + 50,
+        safeY + 100,
+        safeWidth - 100,
+        safeHeight - 200
+      );
+    }
     interactiveCtx.fillStyle = "#ffffff";
     interactiveCtx.font = "italic 28px Georgia";
     interactiveCtx.textAlign = "center";
