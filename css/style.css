@@ -1,7 +1,7 @@
 :root {
     --primary: oklch(37.3% 0.034 259.733);
     --secondary: #16213e;
-    --thirdary: #99A1AF;
+    --thirdary: #F9FAFB;
     --quinary: #D1D5DC;
     --quaternary: #E5E7EB;
     --accent: #1DBFE1;
@@ -27,22 +27,22 @@
 } */
 
 /* Estilos para la navegación */
-/* header {
-    position: fixed;
-    top: 0;
+.header-how-to-bleed {
+    position: relative;
+    /* top: 0; */
     width: 100%;
     z-index: 1000;
     padding: 20px 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: rgba(10, 10, 20, 0.9);
     background: linear-gradient(135deg, var(--thirdary) 0%, var(--light) 100%);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-} */
+}
 
-/* .logo {
+.logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--light);
@@ -50,16 +50,16 @@
     letter-spacing: 2px;
 }
 
-nav ul {
+nav.header-nav-how-to-bleed ul {
     display: flex;
     list-style: none;
 }
 
-nav li {
+nav.header-nav-how-to-bleed li {
     margin-left: 30px;
 }
 
-nav a {
+nav.header-nav-how-to-bleed a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
@@ -68,7 +68,7 @@ nav a {
     transition: var(--transition);
 }
 
-nav a::after {
+nav.header-nav-how-to-bleed a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -79,18 +79,20 @@ nav a::after {
     transition: var(--transition);
 }
 
-nav a:hover::after {
+nav.header-nav-how-to-bleed a:hover::after {
     width: 100%;
 } */
 
 /* Estilos para las secciones */
 section {
+    min-width: 100vw;
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 100px 5%;
     position: relative;
     overflow: hidden;
+    
 }
 
 .section-content {
@@ -106,6 +108,7 @@ section {
     text-align: center;
     justify-content: center;
     color: var(--primary);
+    padding: 50px 5%;
 }
 
 .intro-title {
@@ -223,6 +226,7 @@ section {
 /* Sección de margen de corte */
 .bleed-section {
     background: linear-gradient(45deg, oklch(96.7% 0.003 264.542) 0%, oklch(96.7% 0.003 264.542) 100%);
+    padding: 50px 5%;
 }
 
 .section-title {
@@ -287,6 +291,7 @@ canvas {
 /* Sección de canvas */
 .canvas-section {
     background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
+    padding: 50px 5%;
 }
 
 .canvas-content {
@@ -357,6 +362,7 @@ canvas {
 .steps-section {
     background: linear-gradient(45deg, oklch(96.7% 0.003 264.542) 0%, oklch(96.7% 0.003 264.542) 100%);
     text-align: center;
+    padding: 50px 5%;
 }
 
 .steps-container {
@@ -427,6 +433,7 @@ canvas {
 .benefits-section {
     background: linear-gradient(135deg, var(--light) 0%, var(--light) 100%);
     color: var(--primary);
+    padding: 50px 5%;
 }
 
 .benefits-grid {
@@ -464,6 +471,7 @@ canvas {
     justify-content: center;
     flex-direction: column;
     color: var(--primary);
+    padding: 50px 5%;
 }
 
 .cta-title {
@@ -542,4 +550,13 @@ footer {
     .section-title {
         font-size: 2rem;
     }
+}
+
+/* header off */
+.page-header {
+    display: none;
+}
+
+.container.body-container {
+    margin-top: 0 !important;
 }
