@@ -177,9 +177,9 @@ document.addEventListener("DOMContentLoaded", () => {
     interactiveCtx.fillStyle = "#1a1a2e";
     if (window.innerWidth < 450) {
       interactiveCtx.fillRect(
-        safeX + 15,
+        safeX + 10,
         safeY + 100,
-        safeWidth - 30,
+        safeWidth - 20,
         safeHeight - 200
       );
     } else {
