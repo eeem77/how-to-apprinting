@@ -315,19 +315,42 @@ canvas {
     padding: 12px 25px;
     background: var(--accent);
     border: none;
-    border-radius: 50px;
-    color: white;
+    border-radius: 5px;
+    color: var(--light);
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
     gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.control-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent);
+    transition: 0.7s ease-in-out;
+    z-index: -2;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.control-btn:hover::before {
+    width: 100%;
+    background-color: var(--accent-light);
 }
 
 .control-btn:hover {
-    background: var(--highlight);
+    background: var(--accent-light);
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
 }
 
 /* Sección de pasos */
@@ -460,7 +483,7 @@ canvas {
     background: var(--highlight);
     color: var(--light);
     border: none;
-    border-radius: 50px;
+    border-radius: 5px;
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
@@ -468,6 +491,7 @@ canvas {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button::before {
@@ -478,12 +502,14 @@ canvas {
     width: 0;
     height: 100%;
     background: var(--accent);
-    transition: width 0.5s ease;
+    transition: 0.5s ease-in-out;
     z-index: -1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
 }
 
 .cta-button:hover::before {
     width: 100%;
+    background-color: var(--accent-light);
 }
 
 .cta-button:hover {

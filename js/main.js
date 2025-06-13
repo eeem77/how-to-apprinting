@@ -43,8 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
       /*toggleActions: "play none none none",*/
     },
     opacity: 1,
-    y: 50,
-    stagger: 0.3,
+    y: -50,
+    stagger: 0.25,
+    ease: "power.in",
     duration: 1.3,
   });
 
