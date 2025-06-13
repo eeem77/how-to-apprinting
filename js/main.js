@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bleedCtx.clearRect(0, 0, bleedWidth, bleedHeight);
 
     // Margen de corte de 0.25 pulgadas (asumiendo 96 DPI: 0.25*96 = 24px)
-    const bleed = 24;
+    const bleed = 30;
 
     // Área de sangrado
     bleedCtx.fillStyle = "rgba(233, 69, 96, 0.2)";
@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     // Línea de corte
-    bleedCtx.strokeStyle = "#000000";
+    bleedCtx.strokeStyle = "#EC5D75";
     bleedCtx.lineWidth = 2;
     bleedCtx.strokeRect(0, 0, bleedWidth, bleedHeight);
 
     // Línea de área segura
-    bleedCtx.strokeStyle = "#0f3460";
+    bleedCtx.strokeStyle = "#EC5D75";
     bleedCtx.setLineDash([5, 3]);
     bleedCtx.strokeRect(
       bleed,
@@ -106,11 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Textos
     bleedCtx.fillStyle = "#333";
     bleedCtx.font = "bold 16px Arial";
-    bleedCtx.fillText("Área de Diseño Segura", bleed + 20, bleed + 30);
+    bleedCtx.fillText("Safe Design Area", bleed + 20, bleed + 30);
 
     bleedCtx.fillStyle = "#e94560";
     bleedCtx.font = "bold 14px Arial";
-    bleedCtx.fillText('Margen de Corte (0.25")', 20, 20);
+    bleedCtx.fillText('Cutting Margin (0.25")', 50, 20);
   }
 
   // Canvas interactivo
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const canvasWidth = interactiveCanvas.width;
   const canvasHeight = interactiveCanvas.height;
 
-  let bleedValue = 24; // 0.25" en píxeles (96 DPI)
+  let bleedValue = 30; // 0.25" en píxeles (96 DPI)
   let showBleed = true;
 
   function drawInteractiveCanvas() {
@@ -141,8 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Texto de margen de corte
       interactiveCtx.fillStyle = "#e94560";
-      interactiveCtx.font = "14px Arial";
-      interactiveCtx.fillText("Cutting Margin", 55, 15);
+      interactiveCtx.font = "bold 14px Arial";
+      interactiveCtx.fillText("Cutting Margin", 100, 19);
     }
 
     // Área segura (tamaño final del documento)
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     interactiveCtx.fillStyle = "#ffffff";
     interactiveCtx.fillRect(safeX, safeY, safeWidth, safeHeight);
 
-    interactiveCtx.strokeStyle = "#0f3460";
+    interactiveCtx.strokeStyle = "#EC5D75";
     interactiveCtx.setLineDash([5, 3]);
     interactiveCtx.lineWidth = 1;
     interactiveCtx.strokeRect(safeX, safeY, safeWidth, safeHeight);
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Secure Area
     interactiveCtx.fillStyle = "#0f3460";
     interactiveCtx.font = "bold 16px Arial";
-    interactiveCtx.fillText("Secure Area", safeX + 30, safeY + 30);
+    interactiveCtx.fillText("Secure Area", safeX + 100, safeY + 30);
 
     // Elemento de diseño de ejemplo (invitación)
     interactiveCtx.fillStyle = "#1a1a2e";
@@ -202,11 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
     drawInteractiveCanvas();
   });
 
-  document.getElementById("resetCanvas").addEventListener("click", () => {
-    showBleed = true;
-    bleedValue = 24;
-    drawInteractiveCanvas();
-  });
+  // document.getElementById("resetCanvas").addEventListener("click", () => {
+  //   showBleed = true;
+  //   bleedValue = 30;
+  //   drawInteractiveCanvas();
+  // });
 
   // Inicializar canvas
   drawBleedExample();
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: ".bleed-section",
       start: "top center",
-      toggleActions: "play none none none",
+      /*toggleActions: "play none none none",*/
     },
     duration: 1,
     opacity: 1,
