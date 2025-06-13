@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(section, {
       scrollTrigger: {
         trigger: section,
-        start: "top bottom-=100",
-        /*toggleActions: "play none none none",*/
+        start: "top bottom",
+        toggleActions: "play pause resume reset",
       },
       opacity: 0,
       y: 50,
-      duration: 1,
+      duration: 1.5,
     });
   });
 
