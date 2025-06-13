@@ -18,16 +18,16 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--light);
     background-color: var(--light);
     overflow-x: hidden;
     line-height: 1.6;
-}
+} */
 
 /* Estilos para la navegación */
-header {
+/* header {
     position: fixed;
     top: 0;
     width: 100%;
@@ -36,13 +36,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*background: rgba(10, 10, 20, 0.9);*/
+    background: rgba(10, 10, 20, 0.9);
     background: linear-gradient(135deg, var(--thirdary) 0%, var(--light) 100%);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+} */
 
-.logo {
+/* .logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--light);
@@ -81,7 +81,7 @@ nav a::after {
 
 nav a:hover::after {
     width: 100%;
-}
+} */
 
 /* Estilos para las secciones */
 section {
